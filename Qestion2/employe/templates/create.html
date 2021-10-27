@@ -1,0 +1,32 @@
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Welcome!</strong> enter the details of employes .
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <p style="color:red"> <i> <strong> {{ error }} </i> </strong></p>
+  <p style="color:green"> <i> <strong> {{ title }} </i> </strong></p>
+    
+     
+
+<!-- <h2>{{ error }}</h2> -->
+<form action="{% url 'createaccount' %}" method="post" class="formgroup" enctype="multipart/form-data" runat='server'>
+    {% csrf_token %}
+    <input type="text" name="employe_name" placeholder="Enter employe Name" class="form-control" required ><br><br>
+    <input type="number" name="salary" placeholder="Enter teh salary" class="form-control" required><br>
+<br>
+    <input  type="submit" class="btn btn-success" value="Save">
+    
+</form>
+<h4>if you want to search for any employe<a href="search"> <i> click here </i></a></h4>
+</div>
+
+{% if msg %}
+
+<div class='alert alert-info'>
+    <b>{{error}}</b>
+</div>
+
+{% endif %}
+
+
